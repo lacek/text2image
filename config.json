@@ -1,0 +1,50 @@
+{
+  "charResMap": {
+    "a": "img/asl_a.png",
+    "b": "img/asl_b.png",
+    "c": "img/asl_c.png",
+    "d": "img/asl_d.png",
+    "e": "img/asl_e.png",
+    "f": "img/asl_f.png",
+    "g": "img/asl_g.png",
+    "h": "img/asl_h.png",
+    "i": "img/asl_i.png",
+    "j": "img/asl_j.png",
+    "k": "img/asl_k.png",
+    "l": "img/asl_l.png",
+    "m": "img/asl_m.png",
+    "n": "img/asl_n.png",
+    "o": "img/asl_o.png",
+    "p": "img/asl_p.png",
+    "q": "img/asl_q.png",
+    "r": "img/asl_r.png",
+    "s": "img/asl_s.png",
+    "t": "img/asl_t.png",
+    "u": "img/asl_u.png",
+    "v": "img/asl_v.png",
+    "w": "img/asl_w.png",
+    "x": "img/asl_x.png",
+    "y": "img/asl_y.png",
+    "z": "img/asl_z.png",
+	"0": "img/asl_zzz_0.png",
+	"1": "img/asl_zzz_1.png",
+	"2": "img/asl_zzz_2.png",
+	"3": "img/asl_zzz_3.png",
+	"4": "img/asl_zzz_4.png",
+	"5": "img/asl_zzz_5.png",
+	"6": "img/asl_zzz_6.png",
+	"7": "img/asl_zzz_7.png",
+	"8": "img/asl_zzz_8.png",
+	"9": "img/asl_zzz_9.png"
+  },
+  
+  "charVerticalAlign": "bottom",
+  
+  "charHorizontalAlign": "left",
+  
+  "charSpacingRatio": 0,
+  
+  "lineSpacingRatio": 0.1,
+  
+  "maxFileNameLength": 50
+}

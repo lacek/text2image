@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+	padding-top: 0px;
+	padding-bottom: 20px;
+}
+
+#output {
+	cursor: pointer;
+	border: solid 2px transparent;
+	border-radius: 1em;
+	display: none;
+}
+
+#output:hover {
+	border-color: #CCCCCC;
+}
