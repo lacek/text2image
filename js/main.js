@@ -181,7 +181,8 @@ function drawImage() {
 function saveImage() {
 	this.toBlob(function(blob) {
 		var filename = $("#textarea").val()
-			.trim().substring(0, config.maxFileNameLength);
+			.trim().substring(0, config.maxFileNameLength)
+			+ ".png";
 		saveAs(blob, filename, "image/png");
 	});
 }
