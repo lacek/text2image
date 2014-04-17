@@ -116,8 +116,6 @@ function drawImage() {
 	rowHeight = 0;
 	var context = canvas.getContext("2d");
 	var maxRowWidth = Math.max.apply(Math, rowWidths);
-	console.log(maxRowWidth);
-	console.log(rowWidths.join());
 	if (rowWidths[0] < maxRowWidth) {
 		switch (config.charHorizontalAlign) {
 			case "center":
@@ -129,7 +127,6 @@ function drawImage() {
 		}
 	}
 	for (var i = 0; i < text.length; i++) {
-		console.log("Drawing: " + text.charAt(i));
 		var ch = text.charAt(i);
 		if (ch === "\n") {
 			x = 0;
@@ -153,7 +150,6 @@ function drawImage() {
 				x += averageWidth;
 			} else {
 				var img = charImages[ch];
-				console.log("Image: " + img.src);
 				var yOffset = 0;
 				if (rowHeights[row] > img.height) {
 					switch (config.charVerticalAlign) {
