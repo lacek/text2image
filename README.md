@@ -1,12 +1,12 @@
 Text to Image
 ==============================
 This is a little app to convert text to a downloadable image file. Demo is 
-[here](http://cdn.rawgit.com/lacek/text2image/master/index.html)
+[here](http://rawgit.com/lacek/text2image/master/index.html)
 
 Motivation
 ------------------------------
-This is a tool for my friend to help students with reading disorder to learn
-vocabularies.
+This is a tool for my friend to help students with reading disability to learn
+vocabulary.
 
 
 Usage
@@ -15,12 +15,14 @@ Simply download as zip, extract then open *index.html* and use locally.
 If you want to host it to the Internet, check out the following simple methods:
 
 - [Google Drive](https://support.google.com/drive/answer/2881970)
-- [Dropbox](http://www.dropboxwiki.com/tips-and-tricks/host-websites-with-dropbox)
+- [Dropbox]
+(http://www.dropboxwiki.com/tips-and-tricks/host-websites-with-dropbox)
 
 
 Configurations
 ------------------------------
-Configurations can be find in *config.json*.
+Configurations can be find in [*config.json*]
+(https://github.com/lacek/text2image/blob/master/config.json).
 
 - `charResMap` **(Object)**  
 An object containing mapping of characters to images.
@@ -38,6 +40,12 @@ Spacing ratio between each line. Average height of all characters is used as
 the base.
 - `maxFileNameLength` **(Integer [1-...])**  
 Maximum length of the file name of downloadable image.
+
+Compatibility
+------------------------------
+[FileSaver](https://github.com/eligrey/FileSaver.js) is used to enable the 
+"save as" feature. The list of supported browser can be found [here]
+(https://github.com/eligrey/FileSaver.js/#supported-browsers).
 
 
 Know Issues

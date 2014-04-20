@@ -26,25 +26,25 @@
     "x": "img/asl_x.png",
     "y": "img/asl_y.png",
     "z": "img/asl_z.png",
-	"0": "img/asl_zzz_0.png",
-	"1": "img/asl_zzz_1.png",
-	"2": "img/asl_zzz_2.png",
-	"3": "img/asl_zzz_3.png",
-	"4": "img/asl_zzz_4.png",
-	"5": "img/asl_zzz_5.png",
-	"6": "img/asl_zzz_6.png",
-	"7": "img/asl_zzz_7.png",
-	"8": "img/asl_zzz_8.png",
-	"9": "img/asl_zzz_9.png"
+    "0": "img/asl_zzz_0.png",
+    "1": "img/asl_zzz_1.png",
+    "2": "img/asl_zzz_2.png",
+    "3": "img/asl_zzz_3.png",
+    "4": "img/asl_zzz_4.png",
+    "5": "img/asl_zzz_5.png",
+    "6": "img/asl_zzz_6.png",
+    "7": "img/asl_zzz_7.png",
+    "8": "img/asl_zzz_8.png",
+    "9": "img/asl_zzz_9.png"
   },
-  
+
   "charVerticalAlign": "bottom",
-  
+
   "charHorizontalAlign": "left",
-  
+
   "charSpacingRatio": 0,
-  
+
   "lineSpacingRatio": 0.1,
-  
+
   "maxFileNameLength": 50
 }
