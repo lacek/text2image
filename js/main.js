@@ -29,6 +29,7 @@ function loadConfig(callback) {
 
 function loadImage(text, callback) {
 	$("#loader").show();
+	$("#output").hide();
 	var loaded = 0,
 		averageWidth = 0,
 		averageHeight = 0,
