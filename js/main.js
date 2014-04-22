@@ -190,6 +190,14 @@ function saveImage() {
 function escapeRegExp(str) {
 	return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
+
+var isBlobSupported = false;
+try {
+	isBlobSupported = !!new Blob();
+} catch(e) {}
+if (!isBlobSupported) {
+	document.write('<script src="js/vendor/Blob.js"><\/script>')
+}
 	
 $(document.body).ready(function() {
 	loadConfig(loadImage);
