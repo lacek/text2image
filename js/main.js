@@ -243,6 +243,12 @@ $(document.body).ready(function() {
 	loadConfig(showInterface);
 	$(document).on("touchstart mousedown", blurOnTouchOutside);
 	$("#textarea").focusout(drawImage);
-	$("#output").click(saveImage);
+	$("#output")
+		.click(saveImage)
+		.keypress(function(e) {
+			if (e.which == 13 || e.which == 32) {
+				saveImage.call(this, arguments);
+			}
+		});
 });
 })(jQuery);
