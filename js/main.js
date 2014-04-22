@@ -175,7 +175,7 @@ function drawImage() {
 	} else {
 		$canvas.css("width", "");
 	}
-	$canvas.show();
+	$canvas.show().focus();
 }
 
 function saveImage() {
@@ -191,6 +191,17 @@ function escapeRegExp(str) {
 	return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
 
+function isTextInput(node) {
+	return ['INPUT', 'TEXTAREA'].indexOf(node.nodeName) !== -1;
+}
+
+function blurOnTouchOutside(e) {
+	if (e.target !== document.activeElement
+		&& !isTextInput(e.target) && isTextInput(document.activeElement)) {
+		document.activeElement.blur();
+	}
+}
+
 var isBlobSupported = false;
 try {
 	isBlobSupported = !!new Blob();
@@ -201,6 +212,7 @@ if (!isBlobSupported) {
 	
 $(document.body).ready(function() {
 	loadConfig(loadImage);
+	$(document).on("touchstart mousedown", blurOnTouchOutside);
 	$("#textarea").focusout(drawImage);
 	$("#output").click(saveImage);
 });

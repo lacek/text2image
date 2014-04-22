@@ -1,7 +1,7 @@
 Text to Image
 ==============================
 This is a little app to convert text to a downloadable image file. Demo is 
-[here](http://cdn.rawgit.com/lacek/text2image/master/index.html)
+[here](http://tiny.cc/text2image)
 
 Motivation
 ------------------------------
