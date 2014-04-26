@@ -1,5 +1,7 @@
 (function($) {
-var config;
+var config = {
+	ios: /(ip(hone|od|ad))/i .test(navigator.userAgent)
+};
 var charImages = {};
 var filteringRegex;
 
@@ -9,7 +11,7 @@ function loadConfig(callback) {
 		url: "config.json",
 		mimeType: "application/json",
 		success: function(result) {
-			config = result;
+			config = $.extend(result, config);
 			if (config.charSpacingRatio < 0)config.charSpacingRatio = 0;
 			else if (config.charSpacingRatio > 1) config.charSpacingRatio = 1;
 			
@@ -66,17 +68,20 @@ function loadImage(text, callback) {
 
 function showInterface() {
 	$("#loader").hide();
-	$("#main").removeClass("hide");
-	$("#output").tooltip();
+	$("#main").removeClass("hidden");
+	if (!config.ios) {
+		$("#output").tooltip();
+	}
 	if ($("#textarea").val().length > 0) {
 		drawImage();
 	}
 }
 
 function drawImage() {
-	var canvas = $("#output")[0];
+	var canvas = $("#outputCanvas")[0];
+	var $image = $("#output");
 	if (canvas.height === 0 || canvas.width === 0) {
-		$(canvas).hide();
+		$image.hide();
 	}
 	
 	var text = $("#textarea").val()
@@ -184,18 +189,21 @@ function drawImage() {
 		}
 		
 		// Style and show canvas
-		var $canvas = $(canvas);
-		if (canvas.width > $canvas.parent().width()) {
-			$canvas.css("width", "100%");
+		$image.attr("src", canvas.toDataURL("image/png")).attr("download", text);
+		if (canvas.width > $image.parent().width()) {
+			$image.css("width", "100%");
 		} else {
-			$canvas.css("width", "");
+			$image.css("width", "");
 		}
-		$canvas.show().focus();
+		if (config.ios) {
+			$image.attr("title", text);
+		}
+		$image.show();
 	});
 }
 
 function saveImage() {
-	this.toBlob(function(blob) {
+	$("#outputCanvas")[0].toBlob(function(blob) {
 		var filename = $("#textarea").val()
 			.trim().substring(0, config.maxFileNameLength)
 			+ ".png";
@@ -243,12 +251,14 @@ $(document.body).ready(function() {
 	loadConfig(showInterface);
 	$(document).on("touchstart mousedown", blurOnTouchOutside);
 	$("#textarea").focusout(drawImage);
-	$("#output")
-		.click(saveImage)
-		.keypress(function(e) {
-			if (e.which == 13 || e.which == 32) {
-				saveImage.call(this, arguments);
-			}
-		});
+	if (!config.ios) {
+		$("#output")
+			.click(saveImage)
+			.keypress(function(e) {
+				if (e.which == 13 || e.which == 32) {
+					saveImage.call(this, arguments);
+				}
+			});
+	}
 });
 })(jQuery);
