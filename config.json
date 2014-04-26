@@ -45,6 +45,8 @@
   "charSpacingRatio": 0,
 
   "lineSpacingRatio": 0.1,
+  
+  "backgroundColor": "#FFFFFF",
 
   "maxFileNameLength": 50
 }

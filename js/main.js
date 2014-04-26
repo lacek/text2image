@@ -134,6 +134,10 @@ function drawImage() {
 		var x = 0, y = 0, row = 0;
 		rowHeight = 0;
 		var context = canvas.getContext("2d");
+		if (config.backgroundColor) {
+			context.fillStyle = config.backgroundColor;
+			context.fillRect(0, 0, width, height);
+		}
 		var maxRowWidth = Math.max.apply(Math, rowWidths);
 		if (rowWidths[0] < maxRowWidth) {
 			switch (config.charHorizontalAlign) {
