@@ -61,6 +61,7 @@ function loadImage(text, callback) {
 				charImages[value] = this;
 				done(value);
 			};
+			img.setAttribute('crossorigin', 'anonymous');
 			img.src = config.charResMap[value];
 		}
 	});
